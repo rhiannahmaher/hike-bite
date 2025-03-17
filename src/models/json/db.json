@@ -20,6 +20,13 @@
       "email": "bart@simpson.com",
       "password": "secret",
       "_id": "548999ea-de9b-4dcc-8617-11df631ea715"
+    },
+    {
+      "firstName": "rr",
+      "lastName": "t",
+      "email": "r@r.com",
+      "password": "1234",
+      "_id": "483cb34b-5765-4a33-8733-a92caf38cf87"
     }
   ],
   "trails": [
@@ -38,6 +45,11 @@
     {
       "title": "Dance",
       "_id": "10257b04-6f32-4c7f-8fb6-d82a714858cf"
+    },
+    {
+      "userid": "483cb34b-5765-4a33-8733-a92caf38cf87",
+      "title": "West Highland Way",
+      "_id": "cdb9c159-7688-4ac9-85cb-a74a061afad9"
     }
   ],
   "stops": [
