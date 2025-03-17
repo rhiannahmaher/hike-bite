@@ -10,7 +10,7 @@
     "dev": "nodemon src/server.js"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=22.13.1"
   },
   "author": "",
   "license": "ISC",
