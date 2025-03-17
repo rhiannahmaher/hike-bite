@@ -1,16 +1,29 @@
-<nav class="navbar">
+<nav class="navbar has-background-white-ter mb-6">
   <div class="navbar-brand">
     {{> hikebite-brand}}
+    <span class="navbar-burger has-background-white-ter" data-target="navMenu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </span>
   </div>
-  <div class="navbar-menu" id="navMenu">
+  <div class="navbar-menu has-background-white-ter" id="navMenu">
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a id="dashboard" class="button" href="/dashboard"> Dashboard </a>
-          <a id="about" class="button" href="/about"> About </a>
-          <a id="logout" class="button" href="/logout"> Logout </a>
+          <a id="dashboard" class="button has-background-success-light" href="/dashboard"> Dashboard </a>
+          <a id="about" class="button has-background-success-light" href="/about"> About </a>
+          <a id="logout" class="button has-background-success-light" href="/logout"> Logout </a>
         </div>
       </div>
     </div>
   </div>
 </nav>
+
+<!-- Finds "active" page and updates colour accordingly -->
+<!-- Reference: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList -->
+<script>
+  var activeElement = document.getElementById("{{active}}"); 
+  activeElement.classList.remove("has-background-success-light"); 
+  activeElement.classList.add("has-background-success");
+</script>

@@ -1,17 +1,19 @@
-<form class="box" action="/trail/{{trail._id}}/addstop" method="POST">
-  <label>Enter Food Stop Details:</label>
-  <div class="field is-horizontal">
+<form class="box box-link-hover-shadow" action="/trail/{{trail._id}}/addstop" method="POST">
+  <label class="title is-4">
+    Add Food Stop
+  </label>
+  <div class="field is-horizontal mt-6">
     <div class="field-body">
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Stop Name" name="title">
+        <input class="input input has-background-success-light" type="text" placeholder="Enter Stop Name" name="title">
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Stop Type" name="type">
+        <input class="input input has-background-success-light" type="text" placeholder="Enter Stop Type" name="type">
       </div>
       <div class="field">
-        <input class="input" type="text" placeholder="Enter Opening Hours" name="hours">
+        <input class="input input has-background-success-light" type="text" placeholder="Enter Opening Hours" name="hours">
       </div>
     </div>
   </div>
-  <button class="button is-primary">Add Stop</button>
+  <button class="button has-background-success">Add Stop</button>
 </form>

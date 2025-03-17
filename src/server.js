@@ -26,6 +26,7 @@ async function init() {
     host: "localhost",
   });
   await server.register(Vision);
+
   await server.register(Cookie);
   server.validator(Joi);
   server.auth.strategy("session", "cookie", {
@@ -49,6 +50,7 @@ async function init() {
     layout: true,
     isCached: false,
   });
+
   db.init("mongo");
   server.route(webRoutes);
   server.route(apiRoutes);
