@@ -10,7 +10,7 @@
     "dev": "./node_modules/.bin/nodemon src/server.js --ignore 'src/models/json/*.json'"
   },
   "engines": {
-    "node": ">=22.13.1"
+    "node": ">=16"
   },
   "author": "",
   "license": "ISC",
