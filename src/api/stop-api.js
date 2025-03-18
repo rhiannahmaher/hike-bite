@@ -1,7 +1,8 @@
 
 import Boom from "@hapi/boom";
 import { db } from "../models/db.js";
-import { StopSpec, TrailSpec } from "../models/joi-schemas.js";
+import { IdSpec, StopSpec, StopSpecPlus, StopArraySpec } from "../models/joi-schemas.js";
+import { validationError } from "./logger.js";
 
 export const stopApi = {
   find: {
@@ -14,6 +15,10 @@ export const stopApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    response: { schema: StopArraySpec, failAction: validationError },
+    description: "Get all stopApi",
+    notes: "Returns all stopApi",
   },
 
   findOne: {
@@ -29,6 +34,11 @@ export const stopApi = {
         return Boom.serverUnavailable("No stop with this id");
       }
     },
+    tags: ["api"],
+    description: "Find a Stop",
+    notes: "Returns a stop",
+    validate: { params: { id: IdSpec }, failAction: validationError },
+    response: { schema: StopSpecPlus, failAction: validationError },
   },
 
   create: {
@@ -44,6 +54,11 @@ export const stopApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Create a stop",
+    notes: "Returns the newly created stop",
+    validate: { payload: StopSpec },
+    response: { schema: StopSpecPlus, failAction: validationError },
   },
 
   deleteAll: {
@@ -56,6 +71,8 @@ export const stopApi = {
         return Boom.serverUnavailable("Database Error");
       }
     },
+    tags: ["api"],
+    description: "Delete all stopApi",
   },
 
   deleteOne: {
@@ -72,5 +89,8 @@ export const stopApi = {
         return Boom.serverUnavailable("No stop with this id");
       }
     },
+    tags: ["api"],
+    description: "Delete a stop",
+    validate: { params: { id: IdSpec }, failAction: validationError },
   },
 };

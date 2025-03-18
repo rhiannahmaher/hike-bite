@@ -6,7 +6,7 @@ import { assertSubset } from "../test-utils.js";
 
 EventEmitter.setMaxListeners(25);
 
-suite("User Trail Tests", () => {
+suite(" Trail Model Tests", () => {
   setup(async () => {
     db.init("mongo");
     await db.trailStore.deleteAllTrails(); // Empty trails before testing
@@ -47,8 +47,8 @@ suite("User Trail Tests", () => {
   // TO DO: Review test
   
   test("Get a trail - failures", async () => {
-    const noTrailWithId = await db.trailStore.getTrailById("kerry"); // Fake data to test what happens if a trail doesn't exist
-    assert.isNull(noTrailWithId);
+    assert.isNull(await db.trailStore.getTrailById(""));
+    assert.isNull(await db.trailStore.getTrailById());
   });
 
   test("Get a trail - bad params", async () => {
