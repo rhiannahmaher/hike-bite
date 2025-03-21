@@ -19,8 +19,8 @@ suite("Stop API tests", () => {
   teardown(async () => {});
 
   test("Create stop", async () => {
-    const returnedStop = await hikebiteService.createStop(dingleList._id, cafe);
-    assertSubset(cafe, returnedStop);
+      const returnedStop = await hikebiteService.createStop(dingleList._id, cafe);
+      assertSubset(cafe, returnedStop);
   });
 
   test("create Multiple stops", async () => {

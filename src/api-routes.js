@@ -15,7 +15,7 @@ export const apiRoutes = [
   { method: "DELETE", path: "/api/trails/{id}", config: trailApi.deleteOne },
 
   { method: "GET", path: "/api/stops", config: stopApi.find },
-  { method: "GET", path: "/api/stop/{id}", config: stopApi.findOne },
+  { method: "GET", path: "/api/stops/{id}", config: stopApi.findOne },
   { method: "POST", path: "/api/trails/{id}/stops", config: stopApi.create },
   { method: "DELETE", path: "/api/stops", config: stopApi.deleteAll },
   { method: "DELETE", path: "/api/stops/{id}", config: stopApi.deleteOne },

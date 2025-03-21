@@ -1,4 +1,5 @@
 import Mongoose from "mongoose";
+import { Trail } from "./trail.js";
 import { Stop } from "./stop.js";
 
 export const stopMongoStore = {
@@ -7,8 +8,8 @@ export const stopMongoStore = {
     return stops;
   },
 
-  async addStop(stopId, stop) {
-    stop.trailid = stopId;
+  async addStop(trailId, stop) {
+    stop.trailid = trailId;
     const newStop = new Stop(stop);
     const stopObj = await newStop.save();
     return this.getStopById(stopObj._id);
@@ -18,7 +19,16 @@ export const stopMongoStore = {
     const stops = await Stop.find({ trailid: id }).lean();
     return stops;
   },
+  
+  async getStopById(id) {
+    if (id) {
+      const stop = await Stop.findOne({ _id: id }).lean();
+      return stop;
+    }
+    return null;
+  },
 
+/*
   async getStopById(id) {
     if (Mongoose.isValidObjectId(id)) {
       const stop = await Stop.findOne({ _id: id }).lean();
@@ -26,6 +36,7 @@ export const stopMongoStore = {
     }
     return null;
   },
+  */
 
   async deleteStop(id) {
     try {

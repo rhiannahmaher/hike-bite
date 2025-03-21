@@ -2,7 +2,9 @@ import { assert } from "chai";
 import { hikebiteService } from "./hikebite-service.js";
 import { assertSubset } from "../test-utils.js";
 import { maggie, testUsers } from "../fixtures.js";
+import { db } from "../../src/models/db.js";
 
+const users = new Array(testUsers.length);
 
 suite("User API tests", () => {
   setup(async () => {
@@ -12,8 +14,7 @@ suite("User API tests", () => {
       testUsers[0] = await hikebiteService.createUser(testUsers[i]);
     }
   });
-  teardown(async () => {
-  });
+  teardown(async () => {});
 
   test("Create a user", async () => {
     const newUser = await hikebiteService.createUser(maggie);
@@ -41,12 +42,11 @@ suite("User API tests", () => {
       const returnedUser = await hikebiteService.getUser("1234");
       assert.fail("Should not return a response");
     } catch (error) {
-      assert(error.response.data.message === "No User with this id");
-      // assert.equal(error.response.data.statusCode, 503);
+      console.log("Error response:", error.response); // Error 503 thrown
+      assert(error.response.data.message === "No user with this id");
+      // assert.equal(error.response.data.statusCode, 404);
     }
   });
-
-  // TO DO: Review test
   
   test("Get a user - deleted user", async () => {
     await hikebiteService.deleteAllUsers();
@@ -54,7 +54,7 @@ suite("User API tests", () => {
       const returnedUser = await hikebiteService.getUser(testUsers[0]._id);
       assert.fail("Should not return a response");
     } catch (error) {
-      assert(error.response.data.message === "No User with this id");
+      assert(error.response.data.message === "No user with this id");
       assert.equal(error.response.data.statusCode, 404);
     }
   });

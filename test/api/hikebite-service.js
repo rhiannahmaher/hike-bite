@@ -49,8 +49,8 @@ export const hikebiteService = {
     return res.data;
   },
 
-  async createStop(stop) {
-    const res = await axios.post(`${this.hikebiteUrl}/api/stops`, stop);
+  async createStop(id, stop) {
+    const res = await axios.post(`${this.hikebiteUrl}/api/trails/${id}/stops`, stop);
     return res.data;
   },
 
