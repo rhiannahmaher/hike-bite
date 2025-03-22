@@ -40,9 +40,14 @@ suite("Stop Model tests", () => {
 
   test("Get a stop - success", async () => {
     const dingleList = await db.trailStore.addTrail(dingle);
-    const stop = await db.stopStore.addStop(dingleList._id, cafe)
+    const stop = await db.stopStore.addStop(dingleList._id, cafe);
     const newStop = await db.stopStore.getStopById(stop._id);
     assertSubset (cafe, newStop);
+  });
+
+  test("Get a stop - bad params", async () => {
+    assert.isNull(await db.stopStore.getStopById(""));
+    assert.isNull(await db.stopStore.getStopById());
   });
 
   test("Delete one stop - success", async () => {
@@ -51,11 +56,6 @@ suite("Stop Model tests", () => {
     assert.equal(stops.length, testTrails.length - 1);
     const deletedStop = await db.stopStore.getStopById(testStops[0]._id);
     assert.isNull(deletedStop);
-  });
-
-  test("Get a stop - bad params", async () => {
-    assert.isNull(await db.stopStore.getStopById(""));
-    assert.isNull(await db.stopStore.getStopById());
   });
 
   test("Delete one stop - fail", async () => {

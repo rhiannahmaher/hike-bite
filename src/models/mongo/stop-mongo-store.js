@@ -50,6 +50,8 @@ export const stopMongoStore = {
     stopDoc.title = updatedStop.title;
     stopDoc.type = updatedStop.type;
     stopDoc.hours = updatedStop.hours;
+    stopDoc.latitude = updatedStop.latitude;
+    stopDoc.longitude = updatedStop.longitude;
     await stopDoc.save();
   }
 };

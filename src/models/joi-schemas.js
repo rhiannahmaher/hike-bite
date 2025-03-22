@@ -25,7 +25,9 @@ export const StopSpec = Joi.object()
   .keys({
     title: Joi.string().example("The Bumble Bee Bakery").required(),
     type: Joi.string().example("bakery").required(),
-    hours: Joi.string().example("09:00 - 16:00"). optional(),
+    hours: Joi.string().example("09:00 - 16:00").optional(),
+    latitude: Joi.number().example(50).required(),
+    longitude: Joi.number().allow("").example(50).required(),
     trailid: IdSpec
   })
   .label("Stop");

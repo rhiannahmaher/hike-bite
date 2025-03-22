@@ -68,6 +68,8 @@ export const stopJsonStore = {
     stop.title = updatedStop.title;
     stop.type = updatedStop.type;
     stop.hours = updatedStop.hours;
+    stop.latitude = updatedStop.latitude;
+    stop.longitude = updatedStop.longitude;
     await db.write();
   },
 };

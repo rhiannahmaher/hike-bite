@@ -4,5 +4,26 @@
   <div style="color: Forestgreen" class="title mb-6 is-3">
     {{trail.title}}
   </div>
+  <div class="title mb-6 is-4">
+    {{stop.title}}
+  </div>
+
+  <!-- Station Map -->
+  <div id="map" class="mt-6 mb-6" style="height: 400px;"></div> <!-- Ensure map is visible -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var map = L.map('map').setView([{{stop.latitude}}, {{stop.longitude}}], 14);  
+
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+      }).addTo(map);
+
+      var marker = L.marker([{{stop.latitude}}, {{stop.longitude}}]).addTo(map);
+      marker.bindPopup("{{stop.title}}").openPopup();
+    });
+  </script>
+
   {{> edit-stop}}
 </section>

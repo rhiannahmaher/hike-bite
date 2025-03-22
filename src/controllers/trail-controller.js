@@ -26,7 +26,9 @@ export const trailController = {
       const newStop = {
         title: request.payload.title,
         type: request.payload.type,
-        hours: request.payload.hours
+        hours: request.payload.hours,
+        latitude: request.payload.latitude,
+        longitude: request.payload.longitude
       };
       await db.stopStore.addStop(trail._id, newStop);
       return h.redirect(`/trail/${trail._id}`);

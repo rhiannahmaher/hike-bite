@@ -21,7 +21,7 @@ export const stopMemStore = {
   async getStopById(id) {
     let foundStop = stops.find((stop) => stop._id === id);
     if (!foundStop) {
-      foundStop = null; // accounts for undefined valuea and converts to null to be tested
+      foundStop = null; // accounts for undefined values and converts to null to be tested
     }
     return foundStop;
   },
@@ -55,5 +55,7 @@ export const stopMemStore = {
     stop.title = updatedStop.title;
     stop.type = updatedStop.type;
     stop.hours = updatedStop.hours;
+    stop.latitude = updatedStop.latitude;
+    stop.longitude = updatedStop.longitude;
   },
 };

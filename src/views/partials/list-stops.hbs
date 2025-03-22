@@ -9,6 +9,8 @@
           <th>Name</th>
           <th>Type</th>
           <th>Opening Hours</th>
+          <th>Latitude</th>
+          <th>Longitude</th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +19,8 @@
           <td>{{title}}</td>
           <td>{{type}}</td>
           <td>{{hours}}</td>
+          <td>{{latitude}}</td>
+          <td>{{longitude}}</td>
           <td class="button-cell has-text-centered">
             <form action="/trail/{{trailId}}/stop/{{stopId}}" method="POST"> 
               <a href="/stop/{{../trail._id}}/editstop/{{_id}}" class="button has-background-success-light is-small">

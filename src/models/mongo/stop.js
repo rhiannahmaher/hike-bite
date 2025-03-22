@@ -6,6 +6,8 @@ const stopSchema = new Schema({
   title: String,
   type: String,
   hours: String,
+  latitude: Number,
+  longitude: Number,
   trailid: {
     type: Schema.Types.ObjectId,
     ref: "Trail",
