@@ -1,0 +1,28 @@
+<form class="box" action="/stop/{{trail._id}}/updatestop/{{stop._id}}" method="POST">
+  <label class="title is-4">
+    <strong>Edit Stop</strong>
+  </label>
+  <div class="field is-horizontal mt-6">
+    <div class="field-body">
+      <div class="field has-text-weight-bold">
+        <label>
+          Name
+        </label>
+        <input class="input has-background-success-light" type="text" placeholder="Enter Name" name="title" value="{{stop.title}}">
+      </div>
+      <div class="field has-text-weight-bold">
+        <label>
+          Type
+        </label>
+        <input class="input has-background-success-light" type="text" placeholder="Enter Type" name="type" value="{{stop.type}}">
+      </div>
+      <div class="field has-text-weight-bold">
+        <label>
+          Hours
+        </label>
+        <input class="input has-background-success-light" type="text" placeholder="Enter Opening Hours" name="hours" value="{{stop.hours}}">
+      </div>
+    </div>
+  </div>
+  <button class="button is-success">Update Stop</button>
+</form>

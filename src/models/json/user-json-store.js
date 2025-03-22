@@ -29,6 +29,21 @@ export const userJsonStore = {
     return u;
   },
 
+  async updateUser(userId, updatedUser) {
+    const user = await this.getUserById(userId);
+    user.firstName = updatedUser.firstName;
+    user.lastName = updatedUser.lastName;
+    user.email = updatedUser.email;
+    user.password = updatedUser.password;
+    await db.write();
+  },
+
+  async updateStop(stop, updatedStop) {
+    stop.title = updatedStop.title;
+    stop.type = updatedStop.type;
+    stop.hours = updatedStop.hours;
+  },
+
   async deleteUserById(id) {
     await db.read();
     const index = db.data.users.findIndex((user) => user._id === id);

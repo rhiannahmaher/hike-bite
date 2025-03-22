@@ -1,23 +1,24 @@
 <div class="box box-link-hover-shadow mt-5">
   <div class="title is-4 has-text-weight-bold">
-    Stops
+    {{type}} Stops
   </div>
   <div class="table-container">
-    <table class="table is-fullwidth is-bordered is-striped is-hoverable has-text-left">
-      <thead>
-        <tr class="has-background-success-light has-text-weight-bold">
-          <th>Name</th>
-          <th>Type</th>
-          <th>Opening Hours</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each trail.stops}}
-        <tr>
-          <td>{{title}}</td>
-          <td>{{type}}</td>
-          <td>{{hours}}</td>
-          <td class="button-cell has-text-centered">
+    {{#if stops}} 
+      <table class="table is-fullwidth is-bordered is-striped is-hoverable has-text-left">
+        <thead>
+          <tr class="has-background-success-light has-text-weight-bold">
+            <th>Name</th>
+            <th>Type</th>
+            <th>Opening Hours</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each stops}}
+          <tr>
+            <td>{{title}}</td>
+            <td>{{type}}</td>
+            <td>{{hours}}</td>
+            <td class="button-cell has-text-centered">
             <form action="/trail/{{trailId}}/stop/{{stopId}}" method="POST"> 
               <a href="/stop/{{../trail._id}}/editstop/{{_id}}" class="button has-background-success-light is-small">
                 <i style="color: Forestgreen" class="fas fa-edit"></i>
@@ -31,9 +32,12 @@
               </a>
             </form>
           </td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    {{else}} <!-- If no stops are available for a type -->
+      <p class="title is-4 has-text-weight-bold"> No stops found for this trail... </p>
+    {{/if}}
   </div>
 </div>

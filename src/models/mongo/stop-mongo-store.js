@@ -28,15 +28,10 @@ export const stopMongoStore = {
     return null;
   },
 
-/*
-  async getStopById(id) {
-    if (Mongoose.isValidObjectId(id)) {
-      const stop = await Stop.findOne({ _id: id }).lean();
-      return stop;
-    }
-    return null;
+  async getStopsByType(trailId, type) {
+    const stops = await Stop.find({ trailid: trailId, type: type }).lean();
+    return stops;
   },
-  */
 
   async deleteStop(id) {
     try {

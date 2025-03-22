@@ -34,6 +34,29 @@
       table .button-cell {
         border: none;
       }
+
+      .password-container {
+        position: relative;
+      }
+
+      /* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/visibility */
+      .hidden-password {
+          visibility: hidden; 
+      }
+
+      .password {
+          display: inline; 
+        }
+
+      /* Reference: https://www.w3schools.com/cssref/sel_hover.php */
+      .password-container:hover .hidden-password { 
+          visibility: visible;
+          left: 0;
+      }
+
+      .password-container:hover .password {
+          visibility: hidden;
+      }
     </style>
   </head>
 

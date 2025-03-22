@@ -26,6 +26,14 @@ export const stopMemStore = {
     return foundStop;
   },
 
+  async getStopsByType(trailId, type) {
+      let foundStops = stops.filter((stop) => stop.trailid === trailId && stop.type === type);
+      if (!foundStops) {
+        foundStops = null;
+      }
+      return foundStops;
+    },
+
   async getTrailStops(trailId) {
     let foundStops = stops.filter((stop) => stop.trailtid === trailId);
     if (!foundStops) {

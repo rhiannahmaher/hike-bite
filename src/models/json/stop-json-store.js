@@ -34,6 +34,15 @@ export const stopJsonStore = {
     return foundStop;
   },
 
+  async getStopsByType(trailId, type) {
+    await db.read();
+    let foundStops = stops.filter((stop) => stop.trailid === trailId && stop.type === type);
+    if (!foundStops) {
+      foundStops = null;
+    }
+    return foundStops;
+  },
+
   async getTrailStops(trailId) {
     await db.read();
     let foundStops = stops.filter((stop) => stop.trailid === trailId);
