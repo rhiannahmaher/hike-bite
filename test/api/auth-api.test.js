@@ -26,7 +26,7 @@ suite("Authentication API tests", async () => {
     assert.equal(userInfo.email, returnedUser.email);
     assert.equal(userInfo.userId, returnedUser._id);
   });
-
+  
   test("check Unauthorized", async () => {
     hikebiteService.clearAuth();
     try {

@@ -1,3 +1,7 @@
+/*
+  Profile Controller returns logged in user's details to their profile page
+*/
+
 import { db } from "../models/db.js";
 
 export const profileController = {

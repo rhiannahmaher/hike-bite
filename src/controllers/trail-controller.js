@@ -25,7 +25,7 @@ export const trailController = {
       const trail = await db.trailStore.getTrailById(request.params.id);
       const newStop = {
         title: request.payload.title,
-        type: request.payload.type,
+        type: request.payload.type.charAt(0).toUpperCase() + request.payload.type.slice(1).toLowerCase(), // Capitalises first letter for stop types
         hours: request.payload.hours,
         latitude: request.payload.latitude,
         longitude: request.payload.longitude

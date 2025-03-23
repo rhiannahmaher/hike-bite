@@ -1,5 +1,7 @@
 export const serviceUrl = "http://localhost:3000";
 
+// Test Data
+
 export const maggie = {
   firstName: "Maggie",
   lastName: "Simpson",
@@ -29,22 +31,27 @@ export const testUsers = [
 ];
 
 export const dingle = {
-  title: "Dingle Way"
+  title: "Dingle Way",
+  location: "Dingle"
 };
 
 export const beara = {
-  title: "Beara Way"
+  title: "Beara Way",
+  location: "Cork"
 };
 
 export const testTrails = [
   {
-    title: "West Highland Way"
+    title: "West Highland Way",
+    location: "Fort William"
   },
   {
-    title: "Dingle Way"
+    title: "Dingle Way",
+    location: "Dingle"
   },
   {
-    title: "Wicklow Way"
+    title: "Wicklow Way",
+    location: "Wicklow"
   }
 ];
 

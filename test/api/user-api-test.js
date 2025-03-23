@@ -40,7 +40,7 @@ suite("User API tests", () => {
       const returnedUser = await hikebiteService.getUser("1234");
       assert.fail("Should not return a response");
     } catch (error) {
-      console.log("Error response:", error.response); // Error 503 thrown
+      console.log("Error response:", error.response); 
       assert(error.response.data.message === "No user with this id");
       // assert.equal(error.response.data.statusCode, 404);
     }

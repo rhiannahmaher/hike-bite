@@ -27,6 +27,7 @@ export const db = {
         this.stopStore = stopMongoStore;
         connectMongo();
         break;
+      // Default store
       default:
         this.userStore = userMemStore;
         this.trailStore = trailMemStore;

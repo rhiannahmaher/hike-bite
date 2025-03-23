@@ -1,5 +1,3 @@
-import Mongoose from "mongoose";
-import { Trail } from "./trail.js";
 import { Stop } from "./stop.js";
 
 export const stopMongoStore = {

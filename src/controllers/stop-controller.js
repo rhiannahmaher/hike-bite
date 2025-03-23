@@ -10,7 +10,8 @@ export const stopController = {
       const viewData = {
         title: "Edit Stop",
         trail: trail,
-        stop: stop
+        stop: stop,
+        type: stop.type.charAt(0).toUpperCase() + stop.type.slice(1).toLowerCase() // Capitalises first letter for stop types
       };
       return h.view("stop-view", viewData);
     }
@@ -28,7 +29,7 @@ export const stopController = {
       const stop = await db.stopStore.getStopById(request.params.stopid);
       const newStop = {
         title: request.payload.title,
-        type: request.payload.type,
+        type: request.payload.type.charAt(0).toUpperCase() + request.payload.type.slice(1).toLowerCase(), // Capitalises first letter for stop types
         hours: request.payload.hours,
         latitude: Number(request.payload.latitude),
         longitude: Number(request.payload.longitude)
@@ -38,6 +39,7 @@ export const stopController = {
     }
   },
 
+  // Returns each stops' type (Restaurant, Cafe, etc)
   getStopsByType: {
     handler: async function (request, h) {
       const { trailId, type } = request.params;

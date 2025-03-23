@@ -21,7 +21,7 @@ export const stopMemStore = {
   async getStopById(id) {
     let foundStop = stops.find((stop) => stop._id === id);
     if (!foundStop) {
-      foundStop = null; // accounts for undefined values and converts to null to be tested
+      foundStop = null;
     }
     return foundStop;
   },
@@ -37,7 +37,7 @@ export const stopMemStore = {
   async getTrailStops(trailId) {
     let foundStops = stops.filter((stop) => stop.trailtid === trailId);
     if (!foundStops) {
-      foundStops = null; // accounts for undefined valuea and converts to null to be tested
+      foundStops = null;
     }
     return foundStops;
   },
