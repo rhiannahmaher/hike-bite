@@ -56,5 +56,5 @@ suite("Trail API tests", () => {
     } catch (error) {
       assert(error.response.data.message === "No trail with this id", "Incorrect Response Message");
     }
-  });
-});
+  })
+})

@@ -32,5 +32,5 @@ export const db = {
         this.trailStore = trailMemStore;
         this.stopStore = stopMemStore;
     }
-  },
-};
+  }
+}

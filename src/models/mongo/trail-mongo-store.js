@@ -40,4 +40,4 @@ export const trailMongoStore = {
   async deleteAllTrails() {
     await Trail.deleteMany({});
   }
-};
+}

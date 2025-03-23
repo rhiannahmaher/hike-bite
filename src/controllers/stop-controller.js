@@ -10,10 +10,10 @@ export const stopController = {
       const viewData = {
         title: "Edit Stop",
         trail: trail,
-        stop: stop,
+        stop: stop
       };
       return h.view("stop-view", viewData);
-    },
+    }
   },
 
   update: {
@@ -22,7 +22,7 @@ export const stopController = {
       options: { abortEarly: false },
       failAction: function (request, h, error) {
         return h.view("stop-view", { title: "Edit stop error", errors: error.details }).takeover().code(400);
-      },
+      }
     },
     handler: async function (request, h) {
       const stop = await db.stopStore.getStopById(request.params.stopid);
@@ -35,7 +35,7 @@ export const stopController = {
       };
       await db.stopStore.updateStop(stop, newStop);
       return h.redirect(`/trail/${request.params.id}`);
-    },
+    }
   },
 
   getStopsByType: {
@@ -53,6 +53,6 @@ export const stopController = {
         trail: trail
       };
       return h.view("stop-type-view", viewData);
-    },
-  },
-};
+    }
+  }
+}

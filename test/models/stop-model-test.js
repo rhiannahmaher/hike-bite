@@ -62,5 +62,5 @@ suite("Stop Model tests", () => {
     await db.stopStore.deleteStop("bad-id");
     const stops = await db.stopStore.getAllStops();
     assert.equal(stops.length, testTrails.length);
-  });
-});
+  })
+})

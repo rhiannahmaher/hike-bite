@@ -71,5 +71,5 @@ export const stopJsonStore = {
     stop.latitude = updatedStop.latitude;
     stop.longitude = updatedStop.longitude;
     await db.write();
-  },
-};
+  }
+}

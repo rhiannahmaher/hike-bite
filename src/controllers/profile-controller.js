@@ -7,9 +7,9 @@ export const profileController = {
       const user = await db.userStore.getUserById(loggedInUser._id);
       const viewData = {
         title: "User Profile",
-        user: user,
+        user: user
       };
       return h.view("profile-view", viewData);
-    },
+    }
   }
 }

@@ -35,8 +35,6 @@ suite("User API tests", () => {
     assert.deepEqual(testUsers[0], returnedUser);
   });
 
-  // TO DO: Review test
-
   test("Get a user - bad id", async () => {
     try {
       const returnedUser = await hikebiteService.getUser("1234");
@@ -57,5 +55,5 @@ suite("User API tests", () => {
       assert(error.response.data.message === "No user with this id");
       assert.equal(error.response.data.statusCode, 404);
     }
-  });
-});
+  })
+})

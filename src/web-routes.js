@@ -34,4 +34,4 @@ export const webRoutes = [
   { method: "GET", path: "/user/{id}/edituser", config: userController.index },
   { method: "POST", path: "/user/{id}/updateuser", config: userController.update },
   { method: "GET", path: "/user/{id}/deleteuser", config: userController.deleteUser }
-];
+]

@@ -11,7 +11,7 @@ const stopSchema = new Schema({
   trailid: {
     type: Schema.Types.ObjectId,
     ref: "Trail",
-  },
+  }
 });
 
 export const Stop = Mongoose.model("Stop", stopSchema);

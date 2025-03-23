@@ -83,4 +83,4 @@ export const hikebiteService = {
   async clearAuth() {
     axios.defaults.headers.common.Authorization = "";
   }
-};
+}

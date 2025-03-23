@@ -10,7 +10,7 @@ export const trailController = {
         trail: trail,
       };
       return h.view("trail-view", viewData);
-    },
+    }
   },
 
   addStop: {
@@ -19,7 +19,7 @@ export const trailController = {
       options: { abortEarly: false },
       failAction: function(request, h, error) {
         return h.view("trail-view", { title: "Stop error", errors: error.details, }).takeover().code(400);
-      },
+      }
     },
     handler: async function (request, h) {
       const trail = await db.trailStore.getTrailById(request.params.id);
@@ -32,7 +32,7 @@ export const trailController = {
       };
       await db.stopStore.addStop(trail._id, newStop);
       return h.redirect(`/trail/${trail._id}`);
-    },
+    }
   },
 
   deleteStop: {
@@ -40,6 +40,6 @@ export const trailController = {
       const trail = await db.trailStore.getTrailById(request.params.id);
       await db.stopStore.deleteStop(request.params.stopid);
       return h.redirect(`/trail/${trail._id}`);
-    },
-  },
-};
+    }
+  }
+}

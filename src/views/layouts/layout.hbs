@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{title}}</title>
+
+    <!-- Styling Sheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css"/> 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -30,46 +32,6 @@
       });
     });
     </script>
-
-    <style>
-      /* Reference: https://stackoverflow.com/questions/50043803/how-to-make-an-element-fill-the-remaining-viewport-height */
-      .container {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh; /* Ensures the container fills the entire height of the viewport */
-      }
-      
-      table .button-cell {
-        border: none;
-      }
-
-      .password-container {
-        position: relative;
-      }
-
-      /* Reference: https://developer.mozilla.org/en-US/docs/Web/CSS/visibility */
-      .hidden-password {
-          visibility: hidden; 
-      }
-
-      .password {
-          display: inline; 
-        }
-
-      /* Reference: https://www.w3schools.com/cssref/sel_hover.php */
-      .password-container:hover .hidden-password { 
-          visibility: visible;
-          left: 0;
-      }
-
-      .password-container:hover .password {
-          visibility: hidden;
-      }
-
-      #map { 
-        height: 300px; 
-      }
-    </style>
   </head>
 
   <body class="has-background-white-ter">

@@ -21,4 +21,4 @@ export const apiRoutes = [
   { method: "DELETE", path: "/api/stops/{id}", config: stopApi.deleteOne },
 
   { method: "POST", path: "/api/users/authenticate", config: userApi.authenticate },
-];
+]

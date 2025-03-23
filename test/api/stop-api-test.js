@@ -61,5 +61,5 @@ suite("Stop API tests", () => {
     for (let i = 0; i < testStops.length; i += 1) {
       assertSubset(testStops[i], returnedTrail.stops[i]);
     }
-  });
-});
+  })
+})

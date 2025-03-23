@@ -2,6 +2,7 @@
   <div class="title is-4 has-text-weight-bold">
     {{type}} Stops
   </div>
+
   <div class="table-container">
     {{#if stops}} 
       <table class="table is-fullwidth is-bordered is-striped is-hoverable has-text-left">
@@ -14,6 +15,7 @@
             <th>Longitude</th>
           </tr>
         </thead>
+
         <tbody>
           {{#each stops}}
           <tr>
@@ -22,20 +24,22 @@
             <td>{{hours}}</td>
             <td>{{latitude}}</td>
             <td>{{longitude}}</td>
+
             <td class="button-cell has-text-centered">
-            <form action="/trail/{{trailId}}/stop/{{stopId}}" method="POST"> 
-              <a href="/stop/{{../trail._id}}/editstop/{{_id}}" class="button has-background-success-light is-small">
-                <i style="color: Forestgreen" class="fas fa-edit"></i>
-              </a>
-            </form>
-          </td>
-          <td class="button-cell has-text-centered">
-            <form action="/trail/{{trailId}}/stop/{{stopId}}" method="POST"> 
-              <a href="/trail/{{../trail._id}}/deletestop/{{_id}}" class="button has-background-success-light is-small">
-                <i style="color: Forestgreen" class="fas fa-trash"></i>
-              </a>
-            </form>
-          </td>
+              <form action="/trail/{{trailId}}/stop/{{stopId}}" method="POST"> 
+                <a href="/stop/{{../trail._id}}/editstop/{{_id}}" class="button has-background-success-light is-small">
+                  <i style="color: Forestgreen" class="fas fa-edit"></i>
+                </a>
+              </form>
+            </td>
+
+            <td class="button-cell has-text-centered">
+              <form action="/trail/{{trailId}}/stop/{{stopId}}" method="POST"> 
+                <a href="/trail/{{../trail._id}}/deletestop/{{_id}}" class="button has-background-success-light is-small">
+                  <i style="color: Forestgreen" class="fas fa-trash"></i>
+                </a>
+              </form>
+            </td>
           </tr>
           {{/each}}
         </tbody>

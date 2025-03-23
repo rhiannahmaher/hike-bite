@@ -31,5 +31,5 @@ export const trailMemStore = {
   
   async getUserTrails(userid) {
     return trails.filter((trail) => trail.userid === userid);
-  },
-};
+  }
+}

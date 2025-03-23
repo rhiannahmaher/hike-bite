@@ -48,5 +48,5 @@ export const userJsonStore = {
   async deleteAll() {
     db.data.users = [];
     await db.write();
-  },
-};
+  }
+}

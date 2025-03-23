@@ -36,4 +36,4 @@ suite("Authentication API tests", async () => {
       assert.equal(error.response.data.statusCode, 401);
     }
   })
-});
+})

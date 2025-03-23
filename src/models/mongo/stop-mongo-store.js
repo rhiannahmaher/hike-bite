@@ -54,4 +54,4 @@ export const stopMongoStore = {
     stopDoc.longitude = updatedStop.longitude;
     await stopDoc.save();
   }
-};
+}

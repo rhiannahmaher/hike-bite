@@ -78,4 +78,4 @@ export const testStops = [
     "latitude": 54,
     "longitude": 54,
   }
-];
+]

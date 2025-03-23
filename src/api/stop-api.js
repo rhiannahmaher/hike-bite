@@ -18,7 +18,7 @@ export const stopApi = {
     tags: ["api"],
     response: { schema: StopArraySpec, failAction: validationError },
     description: "Get all stopApi",
-    notes: "Returns all stopApi",
+    notes: "Returns all stopApi"
   },
 
   findOne: {
@@ -38,7 +38,7 @@ export const stopApi = {
     description: "Find a Stop",
     notes: "Returns a stop",
     validate: { params: { id: IdSpec }, failAction: validationError },
-    response: { schema: StopSpecPlus, failAction: validationError },
+    response: { schema: StopSpecPlus, failAction: validationError }
   },
 
   create: {
@@ -58,7 +58,7 @@ export const stopApi = {
     description: "Create a stop",
     notes: "Returns the newly created stop",
     validate: { payload: StopSpec },
-    response: { schema: StopSpecPlus, failAction: validationError },
+    response: { schema: StopSpecPlus, failAction: validationError }
   },
 
   deleteAll: {
@@ -72,7 +72,7 @@ export const stopApi = {
       }
     },
     tags: ["api"],
-    description: "Delete all stopApi",
+    description: "Delete all stopApi"
   },
 
   deleteOne: {
@@ -91,6 +91,6 @@ export const stopApi = {
     },
     tags: ["api"],
     description: "Delete a stop",
-    validate: { params: { id: IdSpec }, failAction: validationError },
+    validate: { params: { id: IdSpec }, failAction: validationError }
   },
 };

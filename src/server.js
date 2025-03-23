@@ -28,7 +28,7 @@ const swaggerOptions = {
   info: {
     title: "Hike & Bite API",
     version: "0.1",
-  },
+  }
 };
 
 async function init() {

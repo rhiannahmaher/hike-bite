@@ -76,7 +76,7 @@ export const trailApi = {
     },
     tags: ["api"],
     description: "Delete a trail",
-    validate: { params: { id: IdSpec }, failAction: validationError },
+    validate: { params: { id: IdSpec }, failAction: validationError }
   },
 
   deleteAll: {
@@ -90,6 +90,6 @@ export const trailApi = {
       }
     },
     tags: ["api"],
-    description: "Delete all trailApi",
-  },
+    description: "Delete all trailApi"
+  }
 };

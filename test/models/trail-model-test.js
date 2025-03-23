@@ -43,8 +43,6 @@ suite(" Trail Model Tests", () => {
       const deletedTrail = await db.trailStore.getTrailById(testTrails[0]._id);
       assert.isNull(deletedTrail);
   });
-
-  // TO DO: Review test
   
   test("Get a trail - failures", async () => {
     assert.isNull(await db.trailStore.getTrailById(""));
@@ -62,5 +60,5 @@ suite(" Trail Model Tests", () => {
     await db.trailStore.deleteTrailById("bad-id");
     const allTrails = await db.trailStore.getAllTrails();
     assert.equal(testTrails.length, allTrails.length);
-  });     
-});
+  })
+})

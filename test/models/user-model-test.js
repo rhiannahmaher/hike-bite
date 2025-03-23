@@ -63,5 +63,5 @@ suite("User Model tests", () => {
     await db.userStore.deleteUserById("bad-id");
     const allUsers = await db.userStore.getAllUsers();
     assert.equal(testUsers.length, allUsers.length);
-  });
-});
+  })
+})

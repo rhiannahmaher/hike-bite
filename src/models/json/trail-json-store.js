@@ -42,5 +42,5 @@ export const trailJsonStore = {
   async deleteAllTrails() {
     db.data.trails = [];
     await db.write();
-  },
-};
+  }
+}
