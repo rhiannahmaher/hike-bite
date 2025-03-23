@@ -15,7 +15,6 @@ suite("Stop API tests", () => {
     dingle.userid = user._id;
     dingleList = await hikebiteService.createTrail(dingle);
   });
-
   teardown(async () => {});
 
   test("Create stop", async () => {
